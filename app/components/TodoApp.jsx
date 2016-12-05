@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import * as uuid from 'node-uuid';
-import * as moment from 'moment';
+import uuid from 'node-uuid';
+import moment from 'moment';
 
 import TodoList from 'TodoList';
 import AddTodo from 'AddTodo';
@@ -16,6 +16,9 @@ export default class TodoApp extends Component {
       searchText: '',
       todos: TodoAPI.getTodos()
     };
+    this.handleAddTodo = this.handleAddTodo.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidUpdate(){
